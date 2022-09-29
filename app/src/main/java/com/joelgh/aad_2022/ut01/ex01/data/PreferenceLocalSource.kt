@@ -1,8 +1,8 @@
-package com.joelgh.aad_2022.UT01.EX01.data
+package com.joelgh.aad_2022.ut01.ex01.data
 
 import android.app.Activity
 import android.content.Context
-import com.joelgh.aad_2022.UT01.EX01.domain.Customer
+import com.joelgh.aad_2022.ut01.ex01.domain.Customer
 
 class PreferenceLocalSource (private val activity: Activity){
 

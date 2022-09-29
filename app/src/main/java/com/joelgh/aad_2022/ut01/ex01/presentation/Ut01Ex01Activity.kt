@@ -1,12 +1,12 @@
-package com.joelgh.aad_2022.UT01.EX01.presentation
+package com.joelgh.aad_2022.ut01.ex01.presentation
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.joelgh.aad_2022.R
-import com.joelgh.aad_2022.UT01.EX01.data.PreferenceLocalSource
-import com.joelgh.aad_2022.UT01.EX01.data.SharedPreferenceLocalSource
-import com.joelgh.aad_2022.UT01.EX01.domain.Customer
+import com.joelgh.aad_2022.ut01.ex01.data.PreferenceLocalSource
+import com.joelgh.aad_2022.ut01.ex01.data.SharedPreferenceLocalSource
+import com.joelgh.aad_2022.ut01.ex01.domain.Customer
 
 class Ut01Ex01Activity : AppCompatActivity(){
 
