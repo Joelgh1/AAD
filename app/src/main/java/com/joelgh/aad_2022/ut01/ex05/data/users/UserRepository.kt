@@ -8,7 +8,7 @@ class UserRepository(val localSource: UsersLocalDataSource, val remoteSource: Us
 
     fun getUsers(): List<User>{
         var users = localSource.getUsers()
-        if(users == null){
+        if(users == null || users.isEmpty()){
             Thread.sleep(3000)
             users = remoteSource.getUsers()
             localSource.saveUsers(users)

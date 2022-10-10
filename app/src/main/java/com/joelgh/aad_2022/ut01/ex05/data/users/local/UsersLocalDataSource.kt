@@ -10,11 +10,13 @@ class UsersLocalDataSource (val activity: Activity){
 
     val sharedPref = activity.getPreferences(Context.MODE_PRIVATE)
     val gson = Gson()
-    val editor = sharedPref.edit()
+
 
     fun saveUsers(users: List<User>){
+        val editor = sharedPref.edit()
         users.forEach {
             editor.putString(it.id.toString(), gson.toJson(it))
+            editor.apply()
         }
     }
 
