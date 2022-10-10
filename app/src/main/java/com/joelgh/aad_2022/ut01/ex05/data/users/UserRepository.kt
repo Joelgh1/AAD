@@ -26,4 +26,8 @@ class UserRepository(val localSource: UsersLocalDataSource, val remoteSource: Us
 
         return user
     }
+
+    fun deleteUser(userId: Int){
+        localSource.deleteUser(userId)
+    }
 }

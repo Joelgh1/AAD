@@ -10,10 +10,10 @@ class UsersLocalDataSource (val activity: Activity){
 
     val sharedPref = activity.getPreferences(Context.MODE_PRIVATE)
     val gson = Gson()
-
+    val editor = sharedPref.edit()
 
     fun saveUsers(users: List<User>){
-        val editor = sharedPref.edit()
+
         users.forEach {
             editor.putString(it.id.toString(), gson.toJson(it))
             editor.apply()
@@ -22,7 +22,7 @@ class UsersLocalDataSource (val activity: Activity){
 
     fun getUsers()= sharedPref.all.map{entry ->
             gson.fromJson(entry.value as String, User::class.java)
-        }.toList()
+        }.toMutableList()
 
     fun findById(userId: Int): User?{
 
@@ -33,5 +33,14 @@ class UsersLocalDataSource (val activity: Activity){
         }else{
             null
         }
+    }
+
+    fun deleteUser(userId: Int){
+        var usersList = this.getUsers()
+
+        usersList.remove(findById(userId))
+
+        editor.clear()
+        saveUsers(usersList)
     }
 }

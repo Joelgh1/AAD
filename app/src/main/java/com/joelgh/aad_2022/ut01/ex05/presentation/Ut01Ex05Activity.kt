@@ -21,10 +21,5 @@ class Ut01Ex05Activity : AppCompatActivity() {
             UsersLocalDataSource(this),
             UsersRemoteDataSource()
         )
-
-        val users = userRepository.getUsers()
-        val user = userRepository.getUser(3)
-        Log.d("@dev", "Users: $users")
-        Log.d("@dev", "User by id: $user")
     }
 }
