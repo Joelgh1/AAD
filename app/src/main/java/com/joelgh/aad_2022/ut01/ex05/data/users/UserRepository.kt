@@ -2,15 +2,16 @@ package com.joelgh.aad_2022.ut01.ex05.data.users
 
 import com.joelgh.aad_2022.ut01.ex05.data.users.local.UsersLocalDataSource
 import com.joelgh.aad_2022.ut01.ex05.data.users.remote.UsersRemoteDataSource
+import com.joelgh.aad_2022.ut01.ex05.data.users.remote.models.UserApiModel
 import com.joelgh.aad_2022.ut01.ex05.domain.User
 
 class UserRepository(val localSource: UsersLocalDataSource, val remoteSource: UsersRemoteDataSource) {
 
-    fun getUsers(): List<User>{
+    fun getUsers(): MutableList<User>{
         var users = localSource.getUsers()
         if(users == null || users.isEmpty()){
             Thread.sleep(3000)
-            users = remoteSource.getUsers()
+             users = remoteSource.getUsers() as MutableList<User>
             localSource.saveUsers(users)
         }
 
@@ -21,7 +22,7 @@ class UserRepository(val localSource: UsersLocalDataSource, val remoteSource: Us
         var user = localSource.findById(userId)
         if(user == null){
             Thread.sleep(3000)
-            user = remoteSource.getUser(userId)
+            user = remoteSource.getUser(userId) as User
         }
 
         return user

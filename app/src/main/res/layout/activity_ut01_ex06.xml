@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ut01.ex06.presentation.Ut01Ex06Activity">
+
+    <TextView
+        android:textSize="@dimen/text_size"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="@string/form_label_counter"
+        android:id="@+id/form_label_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="@dimen/counter_size"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:id="@+id/form_data_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/action_reset"
+        android:text="@string/form_button_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
